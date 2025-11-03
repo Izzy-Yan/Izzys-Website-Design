@@ -687,70 +687,28 @@
     </div>
   </footer>
 
-  <!-- Modal for viewing example sites -->
-  <div id="siteModal" class="modal">
-    <div class="modal-content">
-      <span class="modal-close">&times;</span>
-      <iframe id="modalIframe" class="modal-iframe" src=""></iframe>
-    </div>
-  </div>
-
   <script>
-    // Smooth scroll
-    document.querySelectorAll('nav a').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        const offset = 80;
-        const targetPosition = target.offsetTop - offset;
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth'
-        });
+  // Smooth scroll for navigation links only
+  document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      const offset = 80;
+      const targetPosition = target.offsetTop - offset;
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
       });
     });
+  });
 
-    // Navbar scroll effect
-    window.addEventListener('scroll', function() {
-      const navbar = document.getElementById('navbar');
-      if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-    });
-
-    // Modal functionality
-    const modal = document.getElementById('siteModal');
-    const modalIframe = document.getElementById('modalIframe');
-    const closeBtn = document.querySelector('.modal-close');
-    const previewCards = document.querySelectorAll('.preview-card');
-
-    // Example site URLs (these would be your actual artifact URLs)
-    const siteUrls = {
-      cafe: 'https://claude.site/artifacts/cafe-example-site',
-      service: 'https://claude.site/artifacts/service-example-site',
-      event: 'https://claude.site/artifacts/event-example-site'
-    };
-
-    previewCards.forEach(card => {
-      card.addEventListener('click', function(e) {
-        e.preventDefault();
-        const siteType = this.getAttribute('data-site');
-        
-     
-      });
-    });
-
-    closeBtn.addEventListener('click', function() {
-      modal.classList.remove('active');
-      modalIframe.src = '';
-    });
-
-    window.addEventListener('click', function(e) {
-      if (e.target === modal) {
-        modal.classList.remove('active');
-        modalIframe.src = '';
-      }
-    });
-  </script>
+  // Navbar scroll effect
+  window.addEventListener('scroll', function() {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+</script>
