@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Summer Music Festival 2025 - Santa Maria</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body { 
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6; 
+      color: #fff;
+      background: #000;
+      overflow-x: hidden;
+    }
+
+    .container { 
+      max-width: 1200px; 
+      margin: 0 auto; 
+      padding: 0 20px;
+    }
+
+    /* Hero Section */
+    .hero { 
+      background: 
+        linear-gradient(135deg, rgba(139, 92, 246, 0.9), rgba(236, 72, 153, 0.9)),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%238b5cf6" width="1200" height="800"/></svg>');
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 30% 50%, rgba(236, 72, 153, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 70% 80%, rgba(139, 92, 246, 0.3) 0%, transparent 50%);
+      animation: pulse 10s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .event-date {
+      font-size: 1.5rem;
+      font-weight: 300;
+      margin-bottom: 20px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 { 
+      font-family: 'Bebas Neue', cursive;
+      font-size: 7rem; 
+      margin-bottom: 20px;
+      letter-spacing: 5px;
+      text-shadow: 0 5px 30px rgba(0,0,0,0.5);
+      line-height: 1;
+    }
+
+    .hero-subtitle {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      font-weight: 300;
+      letter-spacing: 2px;
+    }
+
+    .btn-register { 
+      display: inline-block; 
+      background: #fff;
+      color: #8b5cf6; 
+      padding: 20px 60px; 
+      border-radius: 50px; 
+      text-decoration: none; 
+      font-weight: 900;
+      font-size: 1.3rem;
+      transition: all 0.3s;
+      box-shadow: 0 10px 40px rgba(255,255,255,0.3);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .btn-register:hover { 
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 15px 50px rgba(255,255,255,0.5);
+    }
+
+    /* Lineup Section */
+    .lineup { 
+      padding: 100px 20px;
+      background: linear-gradient(180deg, #000, #1a0033);
+    }
+
+    .lineup h2 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 4.5rem;
+      text-align: center;
+      margin-bottom: 70px;
+      background: linear-gradient(135deg, #ec4899, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 5px;
+    }
+
+    .lineup-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .artist-card {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(236, 72, 153, 0.2));
+      backdrop-filter: blur(10px);
+      padding: 40px 30px;
+      border-radius: 25px;
+      text-align: center;
+      transition: all 0.4s;
+      border: 2px solid rgba(255,255,255,0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .artist-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, #ec4899, #8b5cf6);
+      transform: scaleX(0);
+      transition: transform 0.4s;
+    }
+
+    .artist-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .artist-card:hover {
+      transform: translateY(-15px);
+      border-color: rgba(139, 92, 246, 0.5);
+      box-shadow: 0 20px 60px rgba(139, 92, 246, 0.3);
+    }
+
+    .artist-icon {
+      font-size: 4rem;
+      margin-bottom: 20px;
+    }
+
+    .artist-card h3 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+    }
+
+    .artist-card p {
+      color: rgba(255,255,255,0.7);
+      font-size: 1.1rem;
+    }
+
+    .artist-time {
+      margin-top: 15px;
+      font-weight: 700;
+      color: #ec4899;
+      font-size: 1.2rem;
+    }
+
+    /* Details Section */
+    .details { 
+      padding: 100px 20px;
+      background: #000;
+    }
+
+    .details h2 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 4.5rem;
+      text-align: center;
+      margin-bottom: 70px;
+      background: linear-gradient(135deg, #8b5cf6, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 5px;
+    }
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 50px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .detail-item {
+      text-align: center;
+    }
+
+    .detail-icon {
+      font-size: 4rem;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .detail-item h3 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: #ec4899;
+      letter-spacing: 2px;
+    }
+
+    .detail-item p {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.8;
+    }
+
+    /* Registration Section */
+    .registration { 
+      padding: 100px 20px;
+      background: linear-gradient(135deg, #8b5cf6, #ec4899);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .registration::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%);
+    }
+
+    .registration-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .registration h2 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 4.5rem;
+      text-align: center;
+      margin-bottom: 50px;
+      letter-spacing: 5px;
+    }
+
+    .registration-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(20px);
+      padding: 50px;
+      border-radius: 30px;
+      border: 2px solid rgba(255,255,255,0.2);
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 16px 20px;
+      border: 2px solid rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      border-radius: 15px;
+      font-size: 1.1rem;
+      font-family: 'Roboto', sans-serif;
+      transition: all 0.3s;
+    }
+
+    .form-group input::placeholder {
+      color: rgba(255,255,255,0.5);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #fff;
+      background: rgba(255,255,255,0.2);
+    }
+
+    .ticket-options {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .ticket-option {
+      background: rgba(255,255,255,0.1);
+      padding: 25px;
+      border-radius: 15px;
+      border: 2px solid rgba(255,255,255,0.2);
+      cursor: pointer;
+      transition: all 0.3s;
+      text-align: center;
+    }
+
+    .ticket-option:hover {
+      background: rgba(255,255,255,0.2);
+      border-color: #fff;
+    }
+
+    .ticket-option input[type="radio"] {
+      display: none;
+    }
+
+    .ticket-option input[type="radio"]:checked + label {
+      font-weight: 900;
+    }
+
+    .ticket-option label {
+      cursor: pointer;
+    }
+
+    .ticket-type {
+      font-size: 1.3rem;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .ticket-price {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #fff;
+    }
+
+    .btn-submit {
+      background: #fff;
+      color: #8b5cf6;
+      border: none;
+      padding: 18px 50px;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-weight: 900;
+      cursor: pointer;
+      transition: all 0.3s;
+      width: 100%;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .btn-submit:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    }
+
+    /* Footer */
+    footer { 
+      background: #000; 
+      color: rgba(255,255,255,0.6); 
+      text-align: center; 
+      padding: 40px 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    footer p {
+      margin-bottom: 10px;
+    }
+
+    footer a {
+      color: #ec4899;
+      text-decoration: none;
+    }
+
+    /* Responsive */
+    @media(max-width: 768px) {
+      .hero h1 { font-size: 4rem; }
+      .hero-subtitle { font-size: 1.5rem; }
+      .lineup h2, .details h2, .registration h2 { font-size: 3rem; }
+      .ticket-options { grid-template-columns: 1fr; }
+      .registration-form { padding: 30px 25px; }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-content">
+      <div class="event-date">June 15-17, 2025</div>
+      <h1>SUMMER<br>MUSIC<br>FESTIVAL</h1>
+      <div class="hero-subtitle">Santa Maria, California</div>
+      <a href="#register" class="btn-register">Get Tickets</a>
+    </div>
+  </section>
+
+  <section class="lineup">
+    <div class="container">
+      <h2>Lineup</h2>
+      <div class="lineup-grid">
+        <div class="artist-card">
+          <div class="artist-icon">🎸</div>
+          <h3>The Sunset Riders</h3>
+          <p>Rock / Alternative</p>
+          <div class="artist-time">Saturday 8:00 PM</div>
+        </div>
+
+        <div class="artist-card">
+          <div class="artist-icon">🎤</div>
+          <h3>Luna Rose</h3>
+          <p>Pop / Electronic</p>
+          <div class="artist-time">Friday 9:00 PM</div>
+        </div>
+
+        <div class="artist-card">
+          <div class="artist-icon">🎹</div>
+          <h3>Echo Valley</h3>
+          <p>Indie / Folk</p>
+          <div class="artist-time">Sunday 7:00 PM</div>
+        </div>
+
+        <div class="artist-card">
+          <div class="artist-icon">🥁</div>
+          <h3>Urban Pulse</h3>
+          <p>Hip Hop / R&B</p>
+          <div class="artist-time">Saturday 6:00 PM</div>
+        </div>
+
+        <div class="artist-card">
+          <div class="artist-icon">🎺</div>
+          <h3>The Jazz Collective</h3>
+          <p>Jazz / Soul</p>
+          <div class="artist-time">Friday 7:00 PM</div>
+        </div>
+
+        <div class="artist-card">
+          <div class="artist-icon">🎵</div>
+          <h3>Electric Dreams</h3>
+          <p>EDM / Dance</p>
+          <div class="artist-time">Sunday 9:00 PM</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="details">
+    <div class="container">
+      <h2>Event Details</h2>
+      <div class="details-grid">
+        <div class="detail-item">
+          <span class="detail-icon">📍</span>
+          <h3>Location</h3>
+          <p>Santa Maria Fairgrounds<br>937 S Thornburg St<br>Santa Maria, CA 93458</p>
+        </div>
+
+        <div class="detail-item">
+          <span class="detail-icon">🎪</span>
+          <h3>What to Expect</h3>
+          <p>3 stages, food trucks, craft vendors, camping area, and non-stop entertainment</p>
+        </div>
+
+        <div class="detail-item">
+          <span class="detail-icon">🎟️</span>
+          <h3>Tickets</h3>
+          <p>Single day passes and 3-day weekend passes available. Early bird pricing ends May 1st!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="register" class="registration">
+    <div class="registration-content">
+      <h2>Register Now</h2>
+      <form class="registration-form">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="(805) 555-0123" required>
+        </div>
+        
+        <label style="display: block; margin-bottom: 15px; font-weight: 700; font-size: 1.1rem;">Select Ticket Type</label>
+        <div class="ticket-options">
+          <div class="ticket-option">
+            <input type="radio" id="day" name="ticket" value="day" required>
+            <label for="day">
+              <span class="ticket-type">Single Day</span>
+              <span class="ticket-price">$75</span>
+            </label>
+          </div>
+          <div class="ticket-option">
+            <input type="radio" id="weekend" name="ticket" value="weekend">
+            <label for="weekend">
+              <span class="ticket-type">3-Day Pass</span>
+              <span class="ticket-price">$180</span>
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit">Complete Registration</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Summer Music Festival | Santa Maria, CA</p>
+      <p>Website by <a href="mailto:IzzysWebandDigital@gmail.com">Izzy's Web & Digital Services</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    document.querySelectorAll('.ticket-option').forEach(option => {
+      option.addEventListener('click', function() {
+        this.querySelector('input[type="radio"]').checked = true;
+      });
+    });
+
+    document.querySelector('.registration-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for registering! You\'ll receive a confirmation email shortly with your ticket details.');
+      this.reset();
+    });
+  </script>
+</body>
+</html>
