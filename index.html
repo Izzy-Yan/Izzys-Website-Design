@@ -7,24 +7,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    
-    body { 
+
+    body {
       font-family: 'Inter', sans-serif;
-      line-height: 1.6; 
-      color: #1a1a1a; 
+      line-height: 1.6;
+      color: #1a1a1a;
       background: #ffffff;
       overflow-x: hidden;
     }
 
-    .container { 
-      width: 90%; 
-      max-width: 1200px; 
-      margin: auto; 
-      padding: 20px 0; 
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px 0;
     }
 
-    /* Navigation */
-    nav { 
+    nav {
       position: fixed;
       top: 0;
       left: 0;
@@ -33,682 +32,296 @@
       backdrop-filter: blur(10px);
       box-shadow: 0 4px 20px rgba(0,0,0,0.05);
       z-index: 1000;
-      transition: all 0.3s ease;
     }
 
-    nav.scrolled {
-      background: rgba(255, 255, 255, 0.98);
-      box-shadow: 0 4px 30px rgba(0,0,0,0.1);
-    }
-
-    .nav-container { 
-      display: flex; 
-      justify-content: space-between; 
-      align-items: center; 
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       padding: 20px 0;
       max-width: 1200px;
       width: 90%;
       margin: 0 auto;
     }
 
-    .logo { 
-      font-weight: 900; 
+    .logo {
+      font-weight: 900;
       font-size: 1.5rem;
       font-family: 'Montserrat', sans-serif;
       background: linear-gradient(135deg, #10b981, #059669);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      background-clip: text;
-      letter-spacing: -0.5px;
     }
 
-    .nav-links { 
-      list-style: none; 
-      display: flex; 
-      gap: 35px;
-      align-items: center;
-    }
-
-    .nav-links li a { 
-      text-decoration: none; 
-      color: #374151; 
-      font-weight: 500;
-      font-size: 0.95rem;
-      transition: all 0.3s ease;
-      position: relative;
-    }
-
-    .nav-links li a::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: linear-gradient(135deg, #10b981, #059669);
-      transition: width 0.3s ease;
-    }
-
-    .nav-links li a:hover {
-      color: #10b981;
-    }
-
-    .nav-links li a:hover::after {
-      width: 100%;
-    }
-
-    /* Header */
-    header { 
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
-      color: #fff; 
-      padding: 160px 0 100px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: 
-        radial-gradient(circle at 20% 50%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
-      animation: float 20s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translate(0, 0); }
-      50% { transform: translate(20px, 20px); }
-    }
-
-    .header-container {
-      position: relative;
-      z-index: 1;
-    }
-
-    header h1 { 
-      font-size: 4rem; 
-      margin-bottom: 20px;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 900;
-      letter-spacing: -2px;
-      animation: fadeInUp 0.8s ease;
-    }
-
-    header .tagline { 
-      font-size: 1.4rem; 
-      margin-bottom: 40px;
-      color: #cbd5e1;
-      font-weight: 300;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-      animation: fadeInUp 0.8s ease 0.2s backwards;
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .btn-primary { 
-      display: inline-block; 
-      background: linear-gradient(135deg, #10b981, #059669);
-      color: #fff; 
-      padding: 16px 40px; 
-      border-radius: 50px; 
-      font-weight: 600;
-      font-size: 1.05rem;
-      text-decoration: none; 
-      transition: all 0.3s ease;
-      box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
-      animation: fadeInUp 0.8s ease 0.4s backwards;
-    }
-
-    .btn-primary:hover { 
-      transform: translateY(-3px);
-      box-shadow: 0 15px 40px rgba(16, 185, 129, 0.4);
-    }
-
-    /* Section Styling */
-    section {
-      padding: 80px 0;
-    }
-
-    section:nth-child(even) {
-      background: #f9fafb;
-    }
-
-    h2 { 
-      text-align: center; 
-      margin-bottom: 60px; 
-      font-size: 2.8rem;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 800;
-      background: linear-gradient(135deg, #10b981, #059669);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      letter-spacing: -1px;
-    }
-
-    /* Services Section */
-    .services-grid { 
-      display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    .nav-links {
+      list-style: none;
+      display: flex;
       gap: 30px;
     }
 
-    .service-card { 
-      background: #fff; 
-      padding: 40px 30px; 
-      border-radius: 20px; 
-      box-shadow: 0 5px 25px rgba(0,0,0,0.06);
-      transition: all 0.4s ease;
-      border: 1px solid #f3f4f6;
-      position: relative;
-      overflow: hidden;
+    .nav-links a {
+      text-decoration: none;
+      color: #374151;
+      font-weight: 500;
     }
 
-    .service-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
+    header {
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: #fff;
+      padding: 160px 0 100px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 4rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+
+    header p {
+      font-size: 1.3rem;
+      color: #cbd5e1;
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+
+    .btn-primary {
       background: linear-gradient(135deg, #10b981, #059669);
-      transform: scaleX(0);
-      transition: transform 0.4s ease;
+      color: #fff;
+      padding: 16px 40px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
     }
 
-    .service-card:hover::before {
-      transform: scaleX(1);
+    section {
+      padding: 90px 0;
     }
 
-    .service-card:hover { 
-      transform: translateY(-10px); 
-      box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+    h2 {
+      text-align: center;
+      margin-bottom: 60px;
+      font-size: 2.7rem;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #10b981, #059669);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    .service-card h3 { 
-      color: #1a1a1a; 
-      margin-bottom: 15px;
-      font-size: 1.5rem;
-      font-weight: 700;
+    /* SERVICES */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
     }
 
-    .service-card p strong {
+    .service-card {
+      background: #fff;
+      padding: 35px;
+      border-radius: 20px;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+    }
+
+    .service-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.4rem;
+    }
+
+    .price {
       color: #10b981;
       font-size: 1.8rem;
       font-weight: 700;
+      margin-bottom: 15px;
       display: block;
-      margin-bottom: 20px;
     }
 
     .service-card ul {
       list-style: none;
-      margin-top: 20px;
     }
 
     .service-card ul li {
-      padding: 10px 0;
+      padding: 8px 0;
+      color: #6b7280;
+    }
+
+    /* PROCESS */
+    .process-steps {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .process-step {
+      margin-bottom: 30px;
       padding-left: 30px;
       position: relative;
-      color: #6b7280;
     }
 
-    .service-card ul li::before {
-      content: '✓';
-      position: absolute;
-      left: 0;
-      color: #10b981;
-      font-weight: bold;
-      font-size: 1.2rem;
-    }
-
-    /* Portfolio Section */
-    .previews-grid { 
-      display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-      gap: 30px;
-    }
-
-    .preview-card { 
-      background: #fff; 
-      border-radius: 20px; 
-      overflow: hidden; 
-      text-decoration: none; 
-      color: #333; 
-      box-shadow: 0 5px 25px rgba(0,0,0,0.06);
-      transition: all 0.4s ease;
-      border: 1px solid #f3f4f6;
-      position: relative;
-    }
-
-    .preview-card:hover { 
-      transform: translateY(-10px); 
-      box-shadow: 0 20px 50px rgba(0,0,0,0.12);
-    }
-
-    .preview-card img { 
-      width: 100%; 
-      height: 240px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .preview-badge {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      background: linear-gradient(135deg, #10b981, #059669);
-      color: #fff;
-      padding: 6px 15px;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
-    }
-
-    .preview-info { 
-      padding: 25px;
-    }
-
-    .preview-info h3 { 
-      color: #1a1a1a; 
-      margin-bottom: 10px;
-      font-weight: 700;
-      font-size: 1.2rem;
-    }
-
-    .preview-info p {
-      color: #6b7280;
-      font-size: 0.95rem;
-      margin-bottom: 15px;
-    }
-
-    .view-site-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: #10b981;
-      font-weight: 600;
-      font-size: 0.9rem;
-    }
-
-    /* Maintenance Section */
-    #maintenance {
-      background: linear-gradient(135deg, #f0fdf4, #dcfce7);
-    }
-
-    #maintenance ul { 
-      list-style: none;
-      max-width: 800px;
-      margin: 0 auto 40px;
-    }
-
-    #maintenance ul li {
-      padding: 15px 0;
-      padding-left: 40px;
-      position: relative;
-      font-size: 1.1rem;
-      color: #374151;
-    }
-
-    #maintenance ul li::before {
+    .process-step::before {
       content: '→';
       position: absolute;
       left: 0;
       color: #10b981;
       font-weight: bold;
-      font-size: 1.5rem;
     }
 
-    .maintenance-packages {
+    /* PORTFOLIO */
+    .previews-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
-      max-width: 900px;
-      margin: 40px auto 0;
     }
 
-    .package-card {
+    .preview-card {
       background: #fff;
-      padding: 35px;
       border-radius: 20px;
-      box-shadow: 0 5px 25px rgba(0,0,0,0.08);
-      transition: all 0.3s ease;
-    }
-
-    .package-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-    }
-
-    .package-card h3 {
-      color: #1a1a1a;
-      font-size: 1.4rem;
-      margin-bottom: 15px;
-    }
-
-    .package-card .price {
-      color: #10b981;
-      font-size: 2rem;
-      font-weight: 700;
-      display: block;
-      margin-bottom: 15px;
-    }
-
-    .package-card p {
-      color: #6b7280;
-      line-height: 1.8;
-    }
-
-    /* Contact Section */
-    #contact {
-      text-align: center;
-      background: linear-gradient(135deg, #1e293b, #334155);
-      color: #fff;
-    }
-
-    #contact h2 {
-      -webkit-text-fill-color: #fff;
-      color: #fff;
-    }
-
-    #contact p {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-    }
-
-    #contact a { 
-      color: #10b981; 
+      padding: 25px;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.08);
       text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s ease;
+      color: inherit;
     }
 
-    #contact a:hover { 
-      color: #34d399;
+    .preview-card h3 {
+      margin-bottom: 10px;
     }
 
-    /* Footer */
-    footer { 
-      background: #0f172a; 
-      color: #94a3b8; 
-      text-align: center; 
+    .preview-price {
+      color: #10b981;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background: #0f172a;
+      color: #94a3b8;
+      text-align: center;
       padding: 30px 0;
-    }
-
-    /* Modal */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 10000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.9);
-      overflow: auto;
-    }
-
-    .modal.active {
-      display: block;
-    }
-
-    .modal-content {
-      position: relative;
-      background: #fff;
-      margin: 2% auto;
-      width: 95%;
-      max-width: 1400px;
-      height: 90vh;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-    }
-
-    .modal-close {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      color: #fff;
-      font-size: 40px;
-      font-weight: bold;
-      cursor: pointer;
-      z-index: 10001;
-      background: rgba(0,0,0,0.5);
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s;
-    }
-
-    .modal-close:hover {
-      background: rgba(0,0,0,0.8);
-    }
-
-    .modal-iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    /* Responsive */
-    @media(max-width:768px){
-      header h1 { font-size: 2.5rem; }
-      header .tagline { font-size: 1.1rem; }
-      .btn-primary { padding: 14px 32px; }
-      .nav-links { 
-        gap: 20px;
-        font-size: 0.9rem;
-      }
-      h2 { font-size: 2.2rem; }
-      .services-grid,
-      .previews-grid {
-        grid-template-columns: 1fr;
-      }
-      .modal-content {
-        width: 100%;
-        height: 100vh;
-        margin: 0;
-        border-radius: 0;
-      }
-      .modal-close {
-        top: 10px;
-        right: 10px;
-      }
-    }
-
-    @media(max-width:600px){
-      .nav-links {
-        display: none;
-      }
-      header {
-        padding: 140px 0 80px;
-      }
     }
   </style>
 </head>
+
 <body>
-  <!-- Navigation -->
-  <nav id="navbar">
-    <div class="nav-container">
-      <div class="logo">Izzy's W & D Services</div>
-      <ul class="nav-links">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#previews">Portfolio</a></li>
-        <li><a href="#maintenance">Maintenance</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
 
-  <!-- Header -->
-  <header>
-    <div class="container header-container">
-      <h1>Izzy Yancey</h1>
-      <p class="tagline">Helping small businesses build an online presence quickly and affordably</p>
-      <a href="#contact" class="btn-primary">Contact Me</a>
-    </div>
-  </header>
+<nav>
+  <div class="nav-container">
+    <div class="logo">Izzy's Web & Digital</div>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 
-  <!-- Services -->
-  <section id="services">
-    <div class="container">
-      <h2>Services</h2>
-      <div class="services-grid">
-        <div class="service-card">
-          <h3>Starter Website</h3>
-          <p><strong>$350–$500+</strong></p>
-          <ul>
-            <li>3–5 pages (Home, About, Services, Contact)</li>
-            <li>Mobile-friendly & modern design</li>
-            <li>Contact form & Google Maps integration</li>
-            <li>Basic SEO included</li>
-          </ul>
-        </div>
-        <div class="service-card">
-          <h3>Advanced Website + Maintenance</h3>
-          <p><strong>$600–$850+</strong></p>
-          <ul>
-            <li>Up to 10 pages with custom design</li>
-            <li>1–3 months updates included</li>
-            <li>Optional Google My Business setup</li>
-          </ul>
-        </div>
-        <div class="service-card">
-          <h3>Custom Landing Page</h3>
-          <p><strong>$50–$150</strong></p>
-          <ul>
-            <li>Perfect for promotions or events</li>
-            <li>Quick setup and ready to launch</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-<!-- Portfolio Previews -->
-<section id="previews">
+<header>
   <div class="container">
-    <h2>Portfolio</h2>
-    <div class="previews-grid">
-      
-      <!-- CAFE EXAMPLE - UPDATE THIS -->
-      <a href="ex1.html" target="_blank" class="preview-card">
-        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='240' viewBox='0 0 400 240'%3E%3Cdefs%3E%3ClinearGradient id='grad1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23d97706;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23b45309;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23grad1)' width='400' height='240'/%3E%3Ctext x='200' y='120' font-size='60' text-anchor='middle' dominant-baseline='middle' fill='white'%3E☕%3C/text%3E%3C/svg%3E" alt="Sunny Side Cafe Website">
-        <span class="preview-badge">Cafe</span>
-        <div class="preview-info">
-          <h3>Sunny Side Cafe</h3>
-          <p>Full website with menu, about page, location info, and contact form</p>
-          <span class="view-site-btn">View Live Demo →</span>
-        </div>
-      </a>
-      
-      <!-- SERVICE EXAMPLE - UPDATE THIS -->
-      <a href="ex2.html" target="_blank" class="preview-card">
-        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='240' viewBox='0 0 400 240'%3E%3Cdefs%3E%3ClinearGradient id='grad2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23059669;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%2310b981;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23grad2)' width='400' height='240'/%3E%3Ctext x='200' y='120' font-size='60' text-anchor='middle' dominant-baseline='middle' fill='white'%3E🌿%3C/text%3E%3C/svg%3E" alt="Green Clean Services Website">
-        <span class="preview-badge">Service Business</span>
-        <div class="preview-info">
-          <h3>Green Clean Services</h3>
-          <p>Professional service site with booking form, services showcase, and about section</p>
-          <span class="view-site-btn">View Live Demo →</span>
-        </div>
-      </a>
-      
-      <!-- EVENT EXAMPLE - UPDATE THIS -->
-      <a href="ex3.html" target="_blank" class="preview-card">
-        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='240' viewBox='0 0 400 240'%3E%3Cdefs%3E%3ClinearGradient id='grad3' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%238b5cf6;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23ec4899;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23grad3)' width='400' height='240'/%3E%3Ctext x='200' y='120' font-size='60' text-anchor='middle' dominant-baseline='middle' fill='white'%3E🎵%3C/text%3E%3C/svg%3E" alt="Summer Music Festival Landing Page">
-        <span class="preview-badge">Event</span>
-        <div class="preview-info">
-          <h3>Summer Music Festival</h3>
-          <p>Eye-catching event landing page with lineup, details, and registration form</p>
-          <span class="view-site-btn">View Live Demo →</span>
-        </div>
-      </a>
-      
+    <h1>Websites That Actually Work</h1>
+    <p>I help small businesses launch clean, modern websites — fast, affordable, and built to convert.</p>
+    <a href="#contact" class="btn-primary">Get a Quote</a>
+  </div>
+</header>
+
+<section id="services">
+  <div class="container">
+    <h2>Website Packages</h2>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <h3>Starter Website</h3>
+        <span class="price">$400–$600</span>
+        <ul>
+          <li>3–5 pages</li>
+          <li>Mobile responsive</li>
+          <li>Contact form</li>
+          <li>1 revision round</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <h3>Standard Website</h3>
+        <span class="price">$800–$1,200</span>
+        <ul>
+          <li>5–7 pages</li>
+          <li>Custom layout</li>
+          <li>SEO basics</li>
+          <li>1 revision round</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <h3>Premium Website</h3>
+        <span class="price">$1,500+</span>
+        <ul>
+          <li>8–10+ pages</li>
+          <li>Performance optimization</li>
+          <li>Priority timeline</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <h3>Add-Ons</h3>
+        <span class="price">Optional</span>
+        <ul>
+          <li>Content writing: $75–$150/page</li>
+          <li>Branding & style guide: $150–$500+</li>
+          <li>Extra edits billed separately</li>
+        </ul>
+      </div>
+
     </div>
   </div>
 </section>
 
-  <!-- Maintenance -->
-  <section id="maintenance">
-    <div class="container">
-      <h2>Updates & Maintenance</h2>
-      <ul>
-        <li>Content updates: menus, promotions, blog posts, newsletters</li>
-        <li>Technical maintenance: fix broken links, forms, buttons</li>
-        <li>Performance & security: backups, load speed, safety</li>
-        <li>Optional SEO tweaks</li>
-      </ul>
-      <div class="maintenance-packages">
-        <div class="package-card">
-          <h3>Basic Maintenance</h3>
-          <span class="price">$10–$50/mo</span>
-          <p>Add onto any new or existing website. Includes updates (monthly/seasonal), technical troubleshooting, and optional hosting/domain management.</p>
-        </div>
-        <div class="package-card">
-          <h3>Advanced Maintenance</h3>
-          <span class="price">$75–$200/mo</span>
-          <p>Add onto any new or existing website. Includes frequent updates (daily/weekly), technical troubleshooting, blog posts, newsletters, and optional hosting/domain management.</p>
-        </div>
+<section id="process">
+  <div class="container">
+    <h2>How It Works</h2>
+    <div class="process-steps">
+      <div class="process-step">Request a quote and fill out project details</div>
+      <div class="process-step">I confirm scope, pricing, and timeline</div>
+      <div class="process-step">First draft built and delivered</div>
+      <div class="process-step">One round of revisions included</div>
+      <div class="process-step">Final site launched — additional edits billed separately</div>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <div class="container">
+    <h2>Example Projects</h2>
+    <div class="previews-grid">
+      <div class="preview-card">
+        <h3>Sunny Side Cafe</h3>
+        <div class="preview-price">~$900 (5 pages)</div>
+        <p>Menu, location, contact, and custom design.</p>
+      </div>
+
+      <div class="preview-card">
+        <h3>Green Clean Services</h3>
+        <div class="preview-price">~$1,200 (7 pages)</div>
+        <p>Service business site with booking form.</p>
+      </div>
+
+      <div class="preview-card">
+        <h3>Event Landing Page</h3>
+        <div class="preview-price">~$300</div>
+        <p>Single-page event promotion.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Contact -->
-  <section id="contact">
-    <div class="container">
-      <h2>Contact Me</h2>
-      <p>Email: <a href="mailto:IzzysWebandDigital@gmail.com">IzzysWebandDigital@gmail.com</a></p>
-      <p>I can show you examples of websites I've built and discuss what will work best for your business.</p>
-    </div>
-  </section>
+<section id="contact">
+  <div class="container" style="text-align:center;">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:IzzysWebandDigital@gmail.com">IzzysWebandDigital@gmail.com</a></p>
+  </div>
+</section>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Izzy Yancey | Web & Digital Services | Santa Maria, CA</p>
-    </div>
-  </footer>
+<footer>
+  <p>&copy; 2025 Izzy Yancey — Web & Digital Services</p>
+</footer>
 
-  <script>
-  // Smooth scroll for navigation links only
-  document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      const offset = 80;
-      const targetPosition = target.offsetTop - offset;
-      window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth'
-      });
-    });
-  });
-
-  // Navbar scroll effect
-  window.addEventListener('scroll', function() {
-    const navbar = document.getElementById('navbar');
-    if (window.scrollY > 50) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-  });
-</script>
+</body>
+</html>
