@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pricing | Izzy's Web & Digital</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -14,6 +14,7 @@
 <nav>
   <div class="nav-container">
     <div class="logo">Izzy's Web & Digital</div>
+
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="pricing.html">Pricing</a></li>
@@ -21,59 +22,62 @@
       <li><a href="index.html#portfolio">Portfolio</a></li>
       <li><a href="index.html#contact">Contact</a></li>
     </ul>
+
+    <!-- HAMBURGER -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="process.html">Process</a>
+    <a href="index.html#portfolio">Portfolio</a>
+    <a href="index.html#contact">Contact</a>
   </div>
 </nav>
 
-<!-- PAGE HEADER -->
+<!-- HEADER -->
 <header>
-  <div class="container">
+  <div class="container fade-up">
     <h1>Pricing & Packages</h1>
-    <p>Simple, transparent pricing based on your project needs.</p>
+    <p>Simple, transparent pricing designed for small businesses.</p>
   </div>
 </header>
 
-<!-- PRICING GRID -->
-<section>
-  <div class="container">
+<!-- PRICING SECTION -->
+<section class="section-gray">
+  <div class="container fade-up">
+    <h2>Website Packages</h2>
 
     <div class="grid">
 
-      <div class="card">
+      <div class="card fade-up">
         <h3>Starter Website</h3>
-        <div class="price">$400–$600</div>
-        <ul>
-          <li>3–5 pages</li>
-          <li>Mobile responsive</li>
-          <li>Contact form</li>
-          <li>1 revision round</li>
-        </ul>
+        <p class="price">$400–$600</p>
+        <p>3–5 pages, mobile responsive, clean layout, contact form.</p>
       </div>
 
-      <div class="card">
+      <div class="card fade-up">
         <h3>Standard Website</h3>
-        <div class="price">$800–$1,200</div>
-        <ul>
-          <li>5–7 pages</li>
-          <li>Custom layout</li>
-          <li>SEO basics</li>
-          <li>1 revision round</li>
-        </ul>
+        <p class="price">$800–$1,200</p>
+        <p>5–7 pages, custom layout, SEO basics, polished design.</p>
       </div>
 
-      <div class="card">
+      <div class="card fade-up">
         <h3>Premium Website</h3>
-        <div class="price">$1,500–$2,000+</div>
-        <ul>
-          <li>8–10+ pages</li>
-          <li>Performance optimization</li>
-          <li>Priority timeline</li>
-        </ul>
+        <p class="price">$1,500–$2,000+</p>
+        <p>8–10+ pages, advanced features, performance optimization.</p>
       </div>
 
-      <div class="card">
-        <h3>Add-Ons</h3>
-        <div class="price">Optional</div>
-        <ul>
+      <div class="card fade-up">
+        <h3>Add‑Ons</h3>
+        <p class="price">Optional</p>
+        <ul style="margin-top:10px; color:#6b7280;">
           <li>Content writing: $75–$150/page</li>
           <li>Full site copy: $300–$600</li>
           <li>Branding (colors + fonts): $150</li>
@@ -83,12 +87,6 @@
       </div>
 
     </div>
-
-    <p style="text-align:center; margin-top:50px; color:#64748b;">
-      Final pricing depends on scope and requirements.  
-      Request a quote to receive an exact estimate.
-    </p>
-
   </div>
 </section>
 
@@ -96,6 +94,15 @@
 <footer>
   <p>&copy; 2025 Izzy Yancey — Web & Digital Services</p>
 </footer>
+
+<script>
+function toggleMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const burger = document.querySelector('.hamburger');
+  menu.classList.toggle('mobile-active');
+  burger.classList.toggle('active');
+}
+</script>
 
 </body>
 </html>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Process | Izzy's Web & Digital</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -14,6 +14,7 @@
 <nav>
   <div class="nav-container">
     <div class="logo">Izzy's Web & Digital</div>
+
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="pricing.html">Pricing</a></li>
@@ -21,60 +22,85 @@
       <li><a href="index.html#portfolio">Portfolio</a></li>
       <li><a href="index.html#contact">Contact</a></li>
     </ul>
+
+    <!-- HAMBURGER -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="process.html">Process</a>
+    <a href="index.html#portfolio">Portfolio</a>
+    <a href="index.html#contact">Contact</a>
   </div>
 </nav>
 
-<!-- PAGE HEADER -->
+<!-- HEADER -->
 <header>
-  <div class="container">
+  <div class="container fade-up">
     <h1>My Process</h1>
     <p>Clear steps, transparent communication, and a smooth experience from start to finish.</p>
   </div>
 </header>
 
 <!-- PROCESS STEPS -->
+<section class="section-gray">
+  <div class="container fade-up">
+    <h2>How It Works</h2>
+
+    <div class="grid">
+
+      <div class="card fade-up">
+        <h3>1. Request a Quote</h3>
+        <p>You fill out a short form describing your project. I review it and send a quote range and next steps.</p>
+      </div>
+
+      <div class="card fade-up">
+        <h3>2. Project Details & Planning</h3>
+        <p>You complete the project intake form with pages, content, branding, and goals. Scope and timeline are confirmed.</p>
+      </div>
+
+      <div class="card fade-up">
+        <h3>3. First Draft</h3>
+        <p>I design and build the first full version of your website. Typical timeline: 5–14 days depending on size.</p>
+      </div>
+
+      <div class="card fade-up">
+        <h3>4. Revisions</h3>
+        <p>You review the site and submit feedback. One revision round is included.</p>
+      </div>
+
+      <div class="card fade-up">
+        <h3>5. Final Delivery & Launch</h3>
+        <p>Final changes are applied, mobile optimization is completed, and the site is launched.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EDITS POLICY -->
 <section>
-  <div class="container">
+  <div class="container fade-up">
+    <h2>Edits & Revisions Policy</h2>
 
-    <div class="process-step">
-      <strong>1. Request a Quote</strong><br>
-      You fill out a short form describing your project. I review it and send a quote range and next steps.
-    </div>
-
-    <div class="process-step">
-      <strong>2. Project Details & Planning</strong><br>
-      You complete the project intake form with pages, content, branding, and goals. Scope and timeline are confirmed.
-    </div>
-
-    <div class="process-step">
-      <strong>3. First Draft</strong><br>
-      I design and build the first full version of your website.<br>
-      <em>Typical timeline: 5–14 days depending on size.</em>
-    </div>
-
-    <div class="process-step">
-      <strong>4. Feedback & Revisions</strong><br>
-      You review the site and submit feedback.<br>
-      <em>One revision round is included.</em>
-    </div>
-
-    <div class="process-step">
-      <strong>5. Final Delivery & Launch</strong><br>
-      Final changes are applied, mobile optimization is completed, and the site is launched.
-    </div>
-
-    <div class="card" style="margin-top:60px;">
-      <h3>Edits & Revisions Policy</h3>
-      <p style="color:#64748b; margin-top:10px;">
-        Any changes requested after the included revision round or after launch will be billed separately:
+    <div class="card">
+      <p style="color:#6b7280; margin-bottom:20px;">
+        Any changes requested after the included revision round or after launch are billed separately:
       </p>
-      <ul style="margin-top:10px;">
+
+      <ul style="color:#6b7280; line-height:1.9;">
         <li>Small text/image edits: $25</li>
         <li>Design or layout changes: $50/hour</li>
         <li>New pages or features quoted separately</li>
       </ul>
     </div>
-
   </div>
 </section>
 
@@ -82,6 +108,15 @@
 <footer>
   <p>&copy; 2025 Izzy Yancey — Web & Digital Services</p>
 </footer>
+
+<script>
+function toggleMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const burger = document.querySelector('.hamburger');
+  menu.classList.toggle('mobile-active');
+  burger.classList.toggle('active');
+}
+</script>
 
 </body>
 </html>

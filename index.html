@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Izzy's Web & Digital Services</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -14,72 +14,65 @@
 <nav>
   <div class="nav-container">
     <div class="logo">Izzy's Web & Digital</div>
+
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="pricing.html">Pricing</a></li>
-      <li><a href="process.html">The Process</a></li>
+      <li><a href="process.html">Process</a></li>
       <li><a href="#portfolio">Portfolio</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+
+    <!-- HAMBURGER -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="process.html">Process</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <header>
-  <div class="container">
-    <h1>Websites That Actually Work</h1>
-    <p>I help small businesses launch clean, modern websites — fast, affordable, and built to convert.</p>
+  <div class="container fade-up">
+    <h1>Websites That Look Good & Work Even Better</h1>
+    <p>I build clean, modern, responsive websites for small businesses — fast, affordable, and built to convert.</p>
     <a href="#contact" class="btn-primary">Get a Quote</a>
   </div>
 </header>
 
 <!-- SERVICES -->
-<section id="services">
-  <div class="container">
+<section class="section-gray">
+  <div class="container fade-up">
     <h2>Website Packages</h2>
 
     <div class="grid">
 
-      <div class="card">
+      <div class="card fade-up">
         <h3>Starter Website</h3>
-        <div class="price">$400–$600</div>
-        <ul>
-          <li>3–5 pages</li>
-          <li>Mobile responsive</li>
-          <li>Contact form</li>
-          <li>1 revision round</li>
-        </ul>
+        <p class="price">$400–$600</p>
+        <p>Perfect for small businesses needing a clean, simple online presence.</p>
       </div>
 
-      <div class="card">
+      <div class="card fade-up">
         <h3>Standard Website</h3>
-        <div class="price">$800–$1,200</div>
-        <ul>
-          <li>5–7 pages</li>
-          <li>Custom layout</li>
-          <li>SEO basics</li>
-          <li>1 revision round</li>
-        </ul>
+        <p class="price">$800–$1,200</p>
+        <p>Custom layout, SEO basics, and a polished multi‑page design.</p>
       </div>
 
-      <div class="card">
+      <div class="card fade-up">
         <h3>Premium Website</h3>
-        <div class="price">$1,500+</div>
-        <ul>
-          <li>8–10+ pages</li>
-          <li>Performance optimization</li>
-          <li>Priority timeline</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>Add-Ons</h3>
-        <div class="price">Optional</div>
-        <ul>
-          <li>Content writing: $75–$150/page</li>
-          <li>Branding & style guide: $150–$500+</li>
-          <li>Extra edits billed separately</li>
-        </ul>
+        <p class="price">$1,500+</p>
+        <p>Large sites, advanced features, and priority timelines.</p>
       </div>
 
     </div>
@@ -87,41 +80,59 @@
 </section>
 
 <!-- PROCESS -->
-<section id="process">
-  <div class="container">
+<section>
+  <div class="container fade-up">
     <h2>How It Works</h2>
 
-    <div class="process-step">Request a quote and fill out project details</div>
-    <div class="process-step">I confirm scope, pricing, and timeline</div>
-    <div class="process-step">First draft built and delivered</div>
-    <div class="process-step">One revision round included</div>
-    <div class="process-step">Final site launched — additional edits billed separately</div>
+    <div class="grid">
+
+      <div class="card fade-up">
+        <h3>1. Request a Quote</h3>
+        <p>Tell me about your project and goals.</p>
+      </div>
+
+      <div class="card fade-up">
+        <h3>2. First Draft</h3>
+        <p>Your site is built quickly and professionally.</p>
+      </div>
+
+      <div class="card fade-up">
+        <h3>3. Revisions</h3>
+        <p>One round of edits included to perfect everything.</p>
+      </div>
+
+      <div class="card fade-up">
+        <h3>4. Launch</h3>
+        <p>Your site goes live — additional edits billed separately.</p>
+      </div>
+
+    </div>
   </div>
 </section>
 
 <!-- PORTFOLIO -->
-<section id="portfolio">
-  <div class="container">
+<section id="portfolio" class="section-gray">
+  <div class="container fade-up">
     <h2>Example Projects</h2>
 
     <div class="grid">
 
-      <a href="examples/sunny-side-cafe/index.html" class="preview-card">
+      <a href="examples/sunny-side-cafe/index.html" class="card fade-up">
         <h3>Sunny Side Café</h3>
-        <div class="preview-price">~$900 (5 pages)</div>
-        <p>Menu, location, contact, and custom design.</p>
+        <p class="price">~$900 (5 pages)</p>
+        <p>Warm, modern café website with menu, location, and contact pages.</p>
       </a>
 
-      <a href="ex2.html" class="preview-card">
+      <a href="examples/green-clean/index.html" class="card fade-up">
         <h3>Green Clean Services</h3>
-        <div class="preview-price">~$1,200 (7 pages)</div>
-        <p>Service business site with booking form.</p>
+        <p class="price">~$1,200 (4 pages)</p>
+        <p>Eco‑friendly cleaning service site with pricing and contact form.</p>
       </a>
 
-      <a href="ex3.html" class="preview-card">
+      <a href="examples/music-festival/index.html" class="card fade-up">
         <h3>Music Festival Landing Page</h3>
-        <div class="preview-price">~$300</div>
-        <p>Single-page event promotion.</p>
+        <p class="price">~$300</p>
+        <p>High‑energy single‑page event promo.</p>
       </a>
 
     </div>
@@ -130,16 +141,24 @@
 
 <!-- CONTACT -->
 <section id="contact">
-  <div class="container contact-box">
+  <div class="container fade-up" style="text-align:center;">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:IzzysWebandDigital@gmail.com">IzzysWebandDigital@gmail.com</a></p>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <p>&copy; 2025 Izzy Yancey — Web & Digital Services</p>
 </footer>
+
+<script>
+function toggleMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const burger = document.querySelector('.hamburger');
+  menu.classList.toggle('mobile-active');
+  burger.classList.toggle('active');
+}
+</script>
 
 </body>
 </html>
