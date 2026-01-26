@@ -263,3 +263,16 @@ footer {
     display: flex;
   }
 }
+.preview-card,
+.card a,
+.grid a {
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.grid a:hover,
+.preview-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+  border: 2px solid var(--emerald);
+}
