@@ -92,13 +92,9 @@ nav {
 }
 
 .logo {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 900;
-  font-size: 1.5rem;
-  color: var(--emerald-dark);
-  letter-spacing: -0.5px;
   display: flex;
   align-items: center;
+  gap: 12px;
   text-decoration: none;
   transition: opacity 0.3s ease;
 }
@@ -108,8 +104,16 @@ nav {
 }
 
 .logo-image {
-  height: 50px;
+  height: 35px;
   width: auto;
+}
+
+.logo-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 1.3rem;
+  color: var(--emerald-dark);
+  letter-spacing: -0.5px;
 }
 
 /* Desktop Nav */
@@ -665,6 +669,15 @@ h2 {
   margin-bottom: 24px;
 }
 
+.contact-card .btn-secondary,
+.contact-card .btn-primary {
+  color: var(--emerald-dark);
+}
+
+.contact-card .btn-fiverr {
+  color: var(--white);
+}
+
 /* --------------------------------------------------
    PROCESS TIMELINE
 -------------------------------------------------- */
@@ -915,6 +928,14 @@ footer {
     display: flex;
   }
 
+  .logo-text {
+    font-size: 1.1rem;
+  }
+
+  .logo-image {
+    height: 30px;
+  }
+
   header h1 {
     font-size: 2.5rem;
   }
@@ -998,6 +1019,14 @@ footer {
 
   .contact-options {
     grid-template-columns: 1fr;
+  }
+
+  .logo-text {
+    font-size: 1rem;
+  }
+
+  .logo-image {
+    height: 28px;
   }
 }
 
