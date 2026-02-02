@@ -97,6 +97,19 @@ nav {
   font-size: 1.5rem;
   color: var(--emerald-dark);
   letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.logo:hover {
+  opacity: 0.8;
+}
+
+.logo-image {
+  height: 50px;
+  width: auto;
 }
 
 /* Desktop Nav */
